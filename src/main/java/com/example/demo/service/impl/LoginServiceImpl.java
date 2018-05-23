@@ -20,6 +20,7 @@ public class LoginServiceImpl implements LoginService {
      * @param userInfo
      * @return
      */
+    @Override
     public boolean login(UserInfo userInfo) {
         if (userInfo.getUserName()==null){
             return false;
@@ -37,11 +38,13 @@ public class LoginServiceImpl implements LoginService {
         return false;
     }
 
+    
     /**
      * 注册用户
      * @param userInfo
      * @return
      */
+    @Override
     public boolean register(UserInfo userInfo) {
         if (userInfo.getUserName()==null){
             return false;
@@ -63,6 +66,7 @@ public class LoginServiceImpl implements LoginService {
      * @param userInfo
      * @return
      */
+    @Override
     public boolean resetPassword(UserInfo userInfo) {
         if (userInfo.getUserName()==null){
             return false;
@@ -88,6 +92,7 @@ public class LoginServiceImpl implements LoginService {
      * @param userName 用户名
      * @return
      */
+    @Override
     public UserInfo getUserInfo(String userName) {
         UserInfo userInfo = userInfoDao.queryUserInfoByUserName(userName);
         return userInfo;
